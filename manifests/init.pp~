@@ -21,6 +21,5 @@ class squirrel_sql {
   file { '/usr/local/bin/squirrel-sql':
     ensure  => 'link',
     target  => "${squirrel_sql::params::download_bin}",
-    require => Archive[$filename]
   }
 }
