@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Squirrel SQL Client
+Comment=SQL Query Tool
+Icon=<%= scope.lookupvar('squirrel_sql::params::target_dir') %>/eclipse/icon.xpm
+Exec=<%= scope.lookupvar('squirrel_sql::params::target_dir') %>/eclipse/eclipse
+Terminal=false
+StartupNotify=true
+Categories=Development;IDE;Java;
+
