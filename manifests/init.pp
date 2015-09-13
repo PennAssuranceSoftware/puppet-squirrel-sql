@@ -5,7 +5,7 @@ class squirrel_sql {
     url              => 'http://sourceforge.net/projects/squirrel-sql/files/1-stable/3.6.0/squirrel-sql-3.6-standard.jar/download',
     checksum         => false,
     follow_redirects => true,
-    timeout          => 120,
+    timeout          => 2120,
   } ->
   file { "/usr/src/squirrel-sql-automatic.xml":
     source => "puppet:///modules/squirrel_sql/squirrel-sql-automatic.xml"
