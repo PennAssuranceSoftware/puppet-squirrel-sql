@@ -28,5 +28,10 @@ class squirrel_sql {
     artifactid => "postgresql",
     version => "9.4-1202-jdbc4",
     packaging => "jar",
+  } ->
+  file { '/home/vagrant/.squirrel-sql/SQLAliases23.xml':
+    ensure  => $ensure,
+    content => template('squirrel_sql/SQLAliases23.xml.erb'),
+    mode    => 644,
   }
 }

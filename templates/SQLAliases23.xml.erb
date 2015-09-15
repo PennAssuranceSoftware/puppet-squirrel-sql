@@ -1,0 +1,46 @@
+<Beans>
+  <% unless @aliases.empty? -%>
+    <% @aliases.each do |alias| -%>
+      <Bean Class="net.sourceforge.squirrel_sql.client.gui.db.SQLAlias">
+        <autoLogon>true</autoLogon>
+        <colorProperties Class="net.sourceforge.squirrel_sql.client.gui.db.SQLAliasColorProperties">
+            <objectTreeBackgroundColorRgbValue>0</objectTreeBackgroundColorRgbValue>
+            <overrideObjectTreeBackgroundColor>false</overrideObjectTreeBackgroundColor>
+            <overrideStatusBarBackgroundColor>false</overrideStatusBarBackgroundColor>
+            <overrideToolbarBackgroundColor>false</overrideToolbarBackgroundColor>
+            <statusBarBackgroundColorRgbValue>0</statusBarBackgroundColorRgbValue>
+            <toolbarBackgroundColorRgbValue>0</toolbarBackgroundColorRgbValue>
+        </colorProperties>
+        <connectAtStartup>false</connectAtStartup>
+        <connectionProperties Class="net.sourceforge.squirrel_sql.client.gui.db.SQLAliasConnectionProperties">
+            <enableConnectionKeepAlive>false</enableConnectionKeepAlive>
+            <keepAliveSleepTimeSeconds>120</keepAliveSleepTimeSeconds>
+            <keepAliveSqlStatement/>
+        </connectionProperties>
+        <!--TODO: This should be determined from Alias XML -->
+        <driverIdentifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>-7</string>
+        </driverIdentifier>
+        <driverProperties Class="net.sourceforge.squirrel_sql.fw.sql.SQLDriverPropertyCollection">
+            <driverProperties Indexed="true"/>
+        </driverProperties>
+        <!--TODO: This should be generated somehow -->
+        <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
+            <string>-39c208cd:14fceebfbf9:-7f83</string>
+        </identifier>
+        <name><%= alias['name'] %></name>
+        <password><%= alias['password'] %></password>
+        <schemaProperties Class="net.sourceforge.squirrel_sql.client.gui.db.SQLAliasSchemaProperties">
+            <allSchemaProceduresNotToBeCached Indexed="true"/>
+            <cacheSchemaIndependentMetaData>false</cacheSchemaIndependentMetaData>
+            <expectsSomeCachedData>false</expectsSomeCachedData>
+            <globalState>0</globalState>
+            <schemaDetails Indexed="true"/>
+        </schemaProperties>
+        <url><%= alias['url'] %></url>
+        <useDriverProperties>false</useDriverProperties>
+        <userName><%= alias['user'] %></userName>
+      </Bean>
+    <% end -%>
+  <% end -%>
+</Beans>
