@@ -22,5 +22,11 @@ class squirrel_sql {
   file { '/usr/local/bin/squirrel-sql':
     ensure  => 'link',
     target  => "${squirrel_sql::params::download_bin}",
+  } ->
+  maven { "/opt/squirrel-sql/lib/postgresql-9.4-1202-jdbc4.jar":
+    groupid => "org.postgresql",
+    artifactid => "postgresql",
+    version => "9.4-1202-jdbc4",
+    packaging => "jar",
   }
 }
