@@ -1,5 +1,5 @@
 class squirrel_sql(
-    $servers = []
+    $aliases = []
 ) {
   include squirrel_sql::params
 
