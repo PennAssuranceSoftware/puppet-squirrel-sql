@@ -31,9 +31,14 @@ class squirrel_sql(
     version => "9.4-1202-jdbc4",
     packaging => "jar",
   } ->
+  file { "/home/vagrant/.squirrel-sql":
+    ensure => "directory",
+    owner  => "vagrant",
+  } ->
   file { '/home/vagrant/.squirrel-sql/SQLAliases23.xml':
     ensure  => $ensure,
     content => template('squirrel_sql/SQLAliases23.xml.erb'),
+    owner  => "vagrant",
     mode    => 644,
   }
 }

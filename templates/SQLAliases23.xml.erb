@@ -1,6 +1,6 @@
 <Beans>
   <% unless @aliases.empty? -%>
-    <% @aliases.each do |alias| -%>
+    <% @aliases.each do |a| -%>
       <Bean Class="net.sourceforge.squirrel_sql.client.gui.db.SQLAlias">
         <autoLogon>true</autoLogon>
         <colorProperties Class="net.sourceforge.squirrel_sql.client.gui.db.SQLAliasColorProperties">
@@ -28,8 +28,8 @@
         <identifier Class="net.sourceforge.squirrel_sql.fw.id.UidIdentifier">
             <string>-39c208cd:14fceebfbf9:-7f83</string>
         </identifier>
-        <name><%= alias['name'] %></name>
-        <password><%= alias['password'] %></password>
+        <name><%= a['name'] %></name>
+        <password><%= a['password'] %></password>
         <schemaProperties Class="net.sourceforge.squirrel_sql.client.gui.db.SQLAliasSchemaProperties">
             <allSchemaProceduresNotToBeCached Indexed="true"/>
             <cacheSchemaIndependentMetaData>false</cacheSchemaIndependentMetaData>
@@ -37,9 +37,9 @@
             <globalState>0</globalState>
             <schemaDetails Indexed="true"/>
         </schemaProperties>
-        <url><%= alias['url'] %></url>
+        <url><%= a['url'] %></url>
         <useDriverProperties>false</useDriverProperties>
-        <userName><%= alias['user'] %></userName>
+        <userName><%= a['user'] %></userName>
       </Bean>
     <% end -%>
   <% end -%>
