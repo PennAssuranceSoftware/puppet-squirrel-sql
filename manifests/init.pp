@@ -1,4 +1,6 @@
-class squirrel_sql {
+class squirrel_sql(
+    $servers = []
+) {
   include squirrel_sql::params
 
   archive::download { 'squirrel-sql-3.6-standard.jar':
