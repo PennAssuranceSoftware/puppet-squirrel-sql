@@ -31,6 +31,12 @@ class squirrel_sql(
     version => "9.4-1202-jdbc4",
     packaging => "jar",
   } ->
+  maven { "/opt/squirrel-sql/lib/jtds-1.3.1.jar":
+    groupid => "net.sourceforge.jtds",
+    artifactid => "jtds",
+    version => "1.3.1",
+    packaging => "jar",
+  } ->
   file { "/home/vagrant/.squirrel-sql":
     ensure => "directory",
     owner  => "vagrant",
