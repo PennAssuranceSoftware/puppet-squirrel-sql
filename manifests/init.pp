@@ -31,6 +31,12 @@ class squirrel_sql(
     version => "9.4-1202-jdbc4",
     packaging => "jar",
   } ->
+  maven { "/opt/squirrel-sql/lib/h2-1.4.186.jar":
+    groupid => "com.h2database",
+    artifactid => "h2",
+    version => "1.4.186",
+    packaging => "jar",
+  } ->
   file { "/home/vagrant/.squirrel-sql":
     ensure => "directory",
     owner  => "vagrant",
